@@ -161,13 +161,6 @@ button:active{transform: translateY(1px)}
   color: #fff;
   border: 1px solid var(--border);
 }
-.close{
-  position: sticky;
-  top: 0;
-  float: right;
-  margin-left: auto;
-  z-index: 2;
-}
 .letter{
   margin-top: 10px;
   padding: 14px;
@@ -202,3 +195,4 @@ button:active{transform: translateY(1px)}
   .modal{ padding: 10px; }
   .modal-card{ width: 96vw; max-height: 90vh; padding: 14px; }
 }
+
