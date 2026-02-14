@@ -1,0 +1,193 @@
+:root{
+  --bg1:#120018;
+  --bg2:#2a0033;
+  --card:#ffffff10;
+  --border:#ffffff24;
+  --text:#fff;
+  --muted:#ffffffb3;
+  --pink:#ff4d88;
+  --hot:#ff2d55;
+  --shadow: 0 20px 60px #00000066;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color:var(--text);
+  min-height:100vh;
+  background: radial-gradient(1200px 800px at 20% 10%, #ff4d8820, transparent 60%),
+              radial-gradient(900px 700px at 80% 30%, #ff2d5520, transparent 55%),
+              linear-gradient(135deg, var(--bg1), var(--bg2));
+  overflow-x:hidden;
+}
+
+.container{
+  width:min(920px, 92vw);
+  margin: 0 auto;
+  padding: 56px 0 48px;
+  position:relative;
+}
+
+.top{text-align:center;margin-bottom:22px}
+.badge{
+  display:inline-block;
+  padding: 8px 12px;
+  border:1px solid var(--border);
+  background: #ffffff10;
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  margin-bottom: 14px;
+}
+h1{margin: 6px 0 8px;font-size: clamp(28px, 4vw, 44px)}
+.subtitle{margin:0;color: var(--muted);font-size: clamp(14px, 2vw, 18px)}
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+  margin-top: 14px;
+}
+.sectionTitle{margin:0 0 10px}
+
+.note{
+  margin: 0;
+  line-height: 1.7;
+  font-size: 16px;
+  color: #fff;
+  white-space: pre-wrap;
+}
+
+.actions{
+  display:flex;
+  gap: 12px;
+  flex-wrap:wrap;
+  margin-top: 14px;
+}
+button{
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+button:active{transform: translateY(1px)}
+#openLetterBtn{
+  background: linear-gradient(135deg, var(--pink), var(--hot));
+  color: #fff;
+}
+.ghost{
+  background: #ffffff14;
+  border: 1px solid var(--border);
+  color: #fff;
+}
+
+.muted{color: var(--muted); margin: 0 0 10px}
+.codebox{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  background:#00000025;
+  border:1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  color: var(--muted);
+  display:inline-block;
+  margin-bottom: 12px;
+}
+
+.timeline{display:grid;gap:10px}
+.item{
+  border: 1px solid var(--border);
+  background:#ffffff08;
+  border-radius: 14px;
+  padding: 12px;
+}
+.item .date{color: var(--muted); font-size: 12px; margin-bottom: 4px}
+.item .title{font-weight: 900; margin-bottom: 4px}
+.item .desc{color: #fff; opacity: .95; line-height: 1.5}
+
+.gallery{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.photo{
+  width:100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background:#00000025;
+}
+
+.plan{
+  border: 1px solid var(--border);
+  background:#ffffff08;
+  border-radius: 14px;
+  padding: 12px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.footer{text-align:center;color: var(--muted);margin-top: 18px;font-size: 12px}
+
+/* Modal */
+.modal{
+  position: fixed; inset: 0;
+  display:none; place-items:center;
+  padding: 18px; background: #00000080;
+  z-index: 10;
+}
+.modal.show{display:grid}
+.modal-card{
+  width:min(720px, 94vw);
+  border-radius: 18px;
+  background: #1a001f;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 18px 18px 16px;
+  position:relative;
+}
+.close{
+  position:absolute; top: 10px; right: 10px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #ffffff14;
+  color: #fff;
+  border: 1px solid var(--border);
+}
+.letter{
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 14px;
+  background: #ffffff08;
+  border: 1px solid var(--border);
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+.dear, .sign{font-weight:900}
+.modal-actions{display:flex;justify-content:flex-end;margin-top: 12px}
+
+/* Floating hearts */
+.bg-hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.heart{
+  position:absolute;
+  font-size: 18px;
+  opacity: .75;
+  animation: floatUp linear forwards;
+  filter: drop-shadow(0 8px 16px #00000055);
+}
+@keyframes floatUp{
+  from{ transform: translateY(110vh) scale(.8); opacity: 0;}
+  10%{opacity:.8}
+  to{ transform: translateY(-20vh) scale(1.2); opacity: 0;}
+}
+
+/* Confetti canvas */
+.canvas{position:fixed;inset:0;pointer-events:none;z-index:20}
+
+@media (max-width: 640px){
+  .gallery{grid-template-columns: repeat(2, 1fr)}
+}

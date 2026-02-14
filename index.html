@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For My Love ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-hearts" aria-hidden="true"></div>
+
+  <main class="container">
+    <header class="top">
+      <div class="badge">💌 Our Story</div>
+      <h1 id="heroTitle">For My Love ❤️</h1>
+      <p class="subtitle" id="heroSub">From Arun — with love.</p>
+    </header>
+
+    <section class="card">
+      <h2 class="sectionTitle">✨ A note from me</h2>
+      <p class="note" id="loveNote"></p>
+
+      <div class="actions">
+        <button id="openLetterBtn" type="button">💖 Open Love Letter</button>
+        <button id="confettiBtn" class="ghost" type="button">🎉 Confetti</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="sectionTitle">🗓️ Our moments</h2>
+      <div class="timeline" id="timeline"></div>
+    </section>
+
+    <section class="card">
+      <h2 class="sectionTitle">📸 Our photos</h2>
+      <p class="muted">Optional: create a folder named <b>photos</b> and add images named:</p>
+      <div class="codebox">1.jpg, 2.jpg, 3.jpg, 4.jpg, 5.jpg, 6.jpg</div>
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <section class="card">
+      <h2 class="sectionTitle">🍽️ Tonight plan</h2>
+      <div class="plan" id="planBox"></div>
+    </section>
+
+    <footer class="footer">
+      <p>Made with ❤️ by Arun</p>
+    </footer>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button id="closeModal" class="close" aria-label="Close">✕</button>
+      <h2 id="modalTitle">💌 Love Letter</h2>
+      <div class="letter">
+        <p class="dear" id="dearLine"></p>
+        <p id="letterText"></p>
+        <p class="sign" id="signLine"></p>
+      </div>
+      <div class="modal-actions">
+        <button id="downloadBtn" class="ghost" type="button">⬇️ Download as TXT</button>
+      </div>
+    </div>
+  </div>
+
+  <canvas id="canvas" class="canvas" aria-hidden="true"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
