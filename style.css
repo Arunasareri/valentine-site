@@ -196,5 +196,29 @@ button:active{transform: translateY(1px)}
   .modal-card{ width: 96vw; max-height: 90vh; padding: 14px; }
 }
 
+/* Mobile love letter polish */
+@media (max-width: 640px){
+  .modal{
+    align-items: flex-start;   /* prevents cut at top */
+    padding-top: 30px;
+  }
+
+  .modal-card{
+    max-height: 92vh;
+    overflow-y: auto;
+    border-radius: 16px;
+  }
+
+  .letter{
+    font-size: 16px;   /* better readability for wife on phone */
+    line-height: 1.8;
+  }
+
+  h1{
+    font-size: 28px;   /* hero text not oversized on mobile */
+  }
+}
+
+
 
 
