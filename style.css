@@ -143,6 +143,9 @@ button:active{transform: translateY(1px)}
 .modal.show{display:grid}
 .modal-card{
   width:min(720px, 94vw);
+  max-height: 88vh;          /* ✅ important */
+  overflow: auto;            /* ✅ important */
+  -webkit-overflow-scrolling: touch; /* ✅ smooth scroll on iPhone */
   border-radius: 18px;
   background: #1a001f;
   border: 1px solid var(--border);
@@ -157,6 +160,13 @@ button:active{transform: translateY(1px)}
   background: #ffffff14;
   color: #fff;
   border: 1px solid var(--border);
+}
+.close{
+  position: sticky;
+  top: 0;
+  float: right;
+  margin-left: auto;
+  z-index: 2;
 }
 .letter{
   margin-top: 10px;
@@ -189,5 +199,6 @@ button:active{transform: translateY(1px)}
 .canvas{position:fixed;inset:0;pointer-events:none;z-index:20}
 
 @media (max-width: 640px){
-  .gallery{grid-template-columns: repeat(2, 1fr)}
+  .modal{ padding: 10px; }
+  .modal-card{ width: 96vw; max-height: 90vh; padding: 14px; }
 }
